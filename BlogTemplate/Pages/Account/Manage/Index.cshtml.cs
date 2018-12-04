@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using BlogTemplate._1.Data;
-using BlogTemplate._1.Services;
+using Mom_Blog.Data;
+using Mom_Blog.Services;
 
-namespace BlogTemplate._1.Pages.Account.Manage
+namespace Mom_Blog.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {

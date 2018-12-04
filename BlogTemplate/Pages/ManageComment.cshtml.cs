@@ -1,10 +1,10 @@
 using System;
-using BlogTemplate._1.Models;
+using Mom_Blog.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BlogTemplate._1.Pages
+namespace Mom_Blog.Pages
 {
     [Authorize]
     public class ManageCommentModel : PageModel

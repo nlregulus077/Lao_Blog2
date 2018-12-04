@@ -1,6 +1,6 @@
-using BlogTemplate._1.Data;
-using BlogTemplate._1.Pages.Account;
-using BlogTemplate._1.Tests.Fakes;
+using Mom_Blog.Data;
+using Mom_Blog.Pages.Account;
+using Mom_Blog.Tests.Fakes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
@@ -9,7 +9,7 @@ using System.Threading;
 using Xunit;
 using Microsoft.AspNetCore.Identity;
 
-namespace BlogTemplate._1.Tests.Pages.Account
+namespace Mom_Blog.Tests.Pages.Account
 {
     public class RegisterTests
     {

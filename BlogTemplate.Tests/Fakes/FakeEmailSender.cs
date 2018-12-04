@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using BlogTemplate._1.Services;
+using Mom_Blog.Services;
 
-namespace BlogTemplate._1.Tests.Fakes
+namespace Mom_Blog.Tests.Fakes
 {
     class FakeEmailSender : IEmailSender
     {

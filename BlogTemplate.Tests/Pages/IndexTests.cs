@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using BlogTemplate._1.Models;
-using BlogTemplate._1.Pages;
-using BlogTemplate._1.Tests.Fakes;
+using Mom_Blog.Models;
+using Mom_Blog.Pages;
+using Mom_Blog.Tests.Fakes;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Xunit;
 
-namespace BlogTemplate._1.Tests.Pages
+namespace Mom_Blog.Tests.Pages
 {
     public class IndexTests
     {

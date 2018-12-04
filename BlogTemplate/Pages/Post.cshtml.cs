@@ -1,12 +1,12 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using BlogTemplate._1.Models;
-using BlogTemplate._1.Services;
+using Mom_Blog.Models;
+using Mom_Blog.Services;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BlogTemplate._1.Pages
+namespace Mom_Blog.Pages
 {
 
     public class PostModel : PageModel

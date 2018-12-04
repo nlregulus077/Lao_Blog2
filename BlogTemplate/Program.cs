@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 
-namespace BlogTemplate._1
+namespace Mom_Blog
 {
     public class Program
     {

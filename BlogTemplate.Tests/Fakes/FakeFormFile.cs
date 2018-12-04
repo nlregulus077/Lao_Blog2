@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 
-namespace BlogTemplate._1.Tests.Fakes
+namespace Mom_Blog.Tests.Fakes
 {
     class FakeFormFile : IFormFile
     {

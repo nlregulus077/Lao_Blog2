@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "BlogTemplate.1": {
+    "Mom Blog": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

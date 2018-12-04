@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using BlogTemplate._1.Models;
+using Mom_Blog.Models;
 using Xunit;
 
-namespace BlogTemplate._1.Tests.Fakes
+namespace Mom_Blog.Tests.Fakes
 {
     public class FakeFileSystem : IFileSystem
     {

@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
-using BlogTemplate._1.Models;
+using Mom_Blog.Models;
 
-namespace BlogTemplate._1.Services
+namespace Mom_Blog.Services
 {
     public class SlugGenerator
     {

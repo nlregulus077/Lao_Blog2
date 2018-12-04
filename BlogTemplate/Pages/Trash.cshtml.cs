@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BlogTemplate._1.Models;
+using Mom_Blog.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BlogTemplate._1.Pages
+namespace Mom_Blog.Pages
 {
     public class TrashModel : PageModel
     {

@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-namespace BlogTemplate._1.Services
+namespace Mom_Blog.Services
 {
     // This class is used by the application to send email for account confirmation and password reset.
     // For more details see https://go.microsoft.com/fwlink/?LinkID=532713

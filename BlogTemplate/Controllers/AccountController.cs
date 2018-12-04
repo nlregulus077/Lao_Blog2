@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using BlogTemplate._1.Data;
+using Mom_Blog.Data;
 using Microsoft.AspNetCore.Authorization;
 
-namespace BlogTemplate._1.Controllers
+namespace Mom_Blog.Controllers
 {
     [Route("[controller]/[action]")]
     public class AccountController : Controller

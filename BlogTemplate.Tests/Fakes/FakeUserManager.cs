@@ -1,4 +1,4 @@
-using BlogTemplate._1.Data;
+using Mom_Blog.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BlogTemplate._1.Tests.Fakes
+namespace Mom_Blog.Tests.Fakes
 {
     class FakeUserManager : UserManager<ApplicationUser>
     {

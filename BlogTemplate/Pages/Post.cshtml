@@ -7,18 +7,19 @@
     ViewData["Title"] = Model.Post.Title;
 }
 
-
-<article>
-    <div class="col-md-12">
+<br />
+<article class="text-primary">
+    <div class="container col-md-12">
         <h1>@Model.Post.Title</h1>
-        <h5 name="date" class="date text-muted">@Model.Post.PubDate.ToString("MMM dd, yyyy")</h5>
+        <h5 name="date" class="date text-muted">@Model.Post.PubDate.ToString("MMMM dd, yyyy")</h5>
         <p>@Model.HtmlBody()</p>
+      
     </div>
 
     @if (User.Identity.IsAuthenticated)
     {
         <div class="col-md-12">
-            <h4 class="text-primary"><a asp-page="/edit" asp-route-id="@Model.Post.Id.ToString("N")" asp-route-slug="@Model.Post.Slug">Edit Post</a></h4>
+            <h4><a asp-page="/edit" asp-route-id="@Model.Post.Id.ToString("N")" asp-route-slug="@Model.Post.Slug" class="btn btn-outline-primary btn-sm">Edit Post</a></h4>
         </div>
         <form class="col-md-12" id="deletepost" method="post">
             @if (Model.Post.IsDeleted)
@@ -34,15 +35,23 @@
                 </div>
             }
         </form>
-        <div class="col-md-6">
-            <h2>Comments</h2>
+        <br />
+        <div class="col-md-12">
+            <br />
             @if (Model.Post.Comments.Count == 0)
             {
+                <h4>Comments</h4>
+                
                 <p class="text-muted">No comments yet. Be the first to comment!</p>
             }
+
+            <h4><a href="#commentsFormX" data-toggle="collapse">Comments (@Model.Post.Comments.Count)</a></h4>
+
+            <div class="collapse" id="commentsFormX">
             @foreach (var comment in Model.Post.Comments)
             {
                 string cssClass = comment.IsPublic ? "" : "deletedContent";
+                <br />
                 <form id="form1" method="post">
                     <div class="@cssClass">
                         @if (comment.IsPublic)
@@ -58,7 +67,7 @@
 
                         }
                         else
-                        {
+                        { <br />
                             <div class="well well-sm">
                                 <del class="h4">
                                     <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
@@ -68,41 +77,54 @@
 
                                 <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
                                 <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                                <input type="submit" name="undelete" class="btn btn-primary btn-sm" value="Republish Comment" asp-page="ManageComment" asp-page-handler="UndeleteComment" /> 
+                                <input type="submit" name="undelete" class="btn btn-primary btn-sm" value="Republish Comment" asp-page="ManageComment" asp-page-handler="UndeleteComment" />
                             </div>
                         }
                     </div>
                 </form>
             }
+                </div>
         </div>
     }
     else
     {
-        <div class="col-md-6">
-            <h2>Comments</h2>
+        <div class="col-md-12">
+            <br />
             @if (Model.Post.Comments.Count == 0)
             {
+                <h4>Comments</h4>
+                <br />
                 <p class="text-muted">No comments yet. Be the first to comment!</p>
             }
-            @foreach (var comment in Model.Post.Comments)
-            {
-                @if (comment.IsPublic)
-                {
-                    <form id="form1" method="post">
-                        <div class="well well-sm">
-                            <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                            <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMM dd, yyyy")</h6>
-                            <p name="Comment-Body" class="commentBody">@comment.Body</p>
-                            <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
-                            <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                        </div>
-                    </form>
-                }
-            }
+
+            <h4><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#commentsForm">Comments (@Model.Post.Comments.Count)</button></h4>
+            <br />
+
+            <div class="collapse" id="commentsForm">
+              
+                    @foreach (var comment in Model.Post.Comments)
+                    {
+                        @if (comment.IsPublic)
+                        {
+
+                            <form id="form1" method="post">
+                                <div class="well well-sm">
+                                    <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
+                                    <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMMM dd, yyyy")</h6>
+                                    <p name="Comment-Body" class="commentBody">@comment.Body</p>
+                                    <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
+                                    <input type="hidden" name="slug" value="@Model.Post.Slug" />
+                                </div>
+                            </form>
+
+                        }
+                    }
+            
         </div>
+            </div>
     }
 
-    <hr class="commentsDivider" />
+    <!--<hr class="commentsDivider" />-->
     @if (Model.Post.IsPublic && !Model.IsCommentsFull)
     {
         <div class="col-sm-6" style="height:6px;"></div>
@@ -110,7 +132,7 @@
             <div class="col-md-6">
                 <h3>Add Comment</h3>
 
-                <div class="well">
+                <div class="pull-right">
                     <form id="comment-form" method="post">
                         <div class="form-group">
                             <label for="AuthorName">Name</label>

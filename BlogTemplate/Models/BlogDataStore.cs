@@ -5,7 +5,7 @@ using System.Linq;
 using System.Xml.Linq;
 using Microsoft.AspNetCore.Http;
 
-namespace BlogTemplate._1.Models
+namespace Mom_Blog.Models
 {
     public class BlogDataStore
     {

@@ -1,7 +1,7 @@
 using Markdig;
 using Microsoft.AspNetCore.Html;
 
-namespace BlogTemplate._1.Services
+namespace Mom_Blog.Services
 {
     public class MarkdownRenderer
     {

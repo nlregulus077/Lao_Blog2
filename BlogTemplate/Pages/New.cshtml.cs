@@ -2,14 +2,14 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using System.Linq;
-using BlogTemplate._1.Models;
-using BlogTemplate._1.Services;
+using Mom_Blog.Models;
+using Mom_Blog.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Http;
 
-namespace BlogTemplate._1.Pages
+namespace Mom_Blog.Pages
 {
     [Authorize]
     public class NewModel : PageModel

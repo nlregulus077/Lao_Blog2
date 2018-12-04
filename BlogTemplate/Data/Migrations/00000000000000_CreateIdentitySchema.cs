@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace BlogTemplate._1.Data.Migrations
+namespace Mom_Blog.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

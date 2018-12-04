@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using BlogTemplate._1.Services;
+using Mom_Blog.Services;
 
-namespace BlogTemplate._1.Services
+namespace Mom_Blog.Services
 {
     public static class EmailSenderExtensions
     {

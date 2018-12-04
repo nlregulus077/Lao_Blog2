@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using BlogTemplate._1.Models;
-using BlogTemplate._1.Tests.Fakes;
+using Mom_Blog.Models;
+using Mom_Blog.Tests.Fakes;
 using Microsoft.AspNetCore.Http;
 using Xunit;
-using static BlogTemplate._1.Pages.EditModel;
+using static Mom_Blog.Pages.EditModel;
 
-namespace BlogTemplate._1.Tests.Model
+namespace Mom_Blog.Tests.Model
 {
     public class BlogDataStoreTests
     {

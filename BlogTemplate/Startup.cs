@@ -1,6 +1,6 @@
-using BlogTemplate._1.Data;
-using BlogTemplate._1.Models;
-using BlogTemplate._1.Services;
+using Mom_Blog.Data;
+using Mom_Blog.Models;
+using Mom_Blog.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BlogTemplate._1
+namespace Mom_Blog
 {
     public class Startup
     {

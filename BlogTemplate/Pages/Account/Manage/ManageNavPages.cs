@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace BlogTemplate._1.Pages.Account.Manage
+namespace Mom_Blog.Pages.Account.Manage
 {
     public static class ManageNavPages
     {

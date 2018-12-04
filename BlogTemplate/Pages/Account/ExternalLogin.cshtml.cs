@@ -8,9 +8,9 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using BlogTemplate._1.Data;
+using Mom_Blog.Data;
 
-namespace BlogTemplate._1.Pages.Account
+namespace Mom_Blog.Pages.Account
 {
     public class ExternalLoginModel : PageModel
     {
