@@ -44,12 +44,12 @@ else
                         <p>
                             <a asp-page="./ForgotPassword">Forgot your password?</a>
                         </p>
-                        @if (Model.NoIdentitiesExist)
-                        {
+                        @*@if (Model.NoIdentitiesExist)*@
+                        @* { *@
                         <p>
                             <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
                         </p>
-                        }
+                       @* } *@
                     </div>
                 </form>
             </section>

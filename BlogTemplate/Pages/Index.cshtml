@@ -24,25 +24,33 @@
             </div>
         </div>
 
-        foreach (var post in Model.PostSummaries)
-        {
-            <article>
-                <br />
-                <div class="col-md-12">
-                    <h2><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h2>
-                    <div class="h5 text-muted">@post.PublishTime.ToString("MMMM dd, yyyy")</div>
-                    <p class="lead">@post.Excerpt</p>
-                    @if (post.CommentCount == 1)
-                    {
-                        <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comment </a></div>
-                    }
-                    else
-                    {
-                        <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comments </a></div>
-                    }
+        <div class="container"> 
+        <div class="row p-3"> 
+            @foreach (var post in Model.PostSummaries)
+            {
+                    <div class="col-4 mb-3">
+                        <article class="card h-100 text-primary bg-white mb-3" style="max-width: 20rem;">
 
-                </div>
-            </article>
-        }
+                            <div class="card-header text-white bg-primary">@post.PublishTime.ToString("MMMM dd, yyyy")</div>
+                            <div class="card-body">
+                                <h3 class="card-title"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h3>
+                                <p class="card-text">@post.Excerpt</p>
+                                @if (post.CommentCount == 1)
+                                {
+                                    <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comment </a></div>
+                                }
+                                else
+                                {
+                                    <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comments </a></div>
+                                }
+                            </div>
+
+                        </article>
+                    </div>
+                
+            }
+
+        </div>
+        </div> 
     }
 }

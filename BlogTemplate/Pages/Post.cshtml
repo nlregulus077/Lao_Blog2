@@ -7,13 +7,12 @@
     ViewData["Title"] = Model.Post.Title;
 }
 
-<br />
-<article class="text-primary">
+<article class="text-primary lead">
     <div class="container col-md-12">
         <h1>@Model.Post.Title</h1>
         <h5 name="date" class="date text-muted">@Model.Post.PubDate.ToString("MMMM dd, yyyy")</h5>
         <p>@Model.HtmlBody()</p>
-      
+
     </div>
 
     @if (User.Identity.IsAuthenticated)
@@ -41,49 +40,53 @@
             @if (Model.Post.Comments.Count == 0)
             {
                 <h4>Comments</h4>
-                
+
                 <p class="text-muted">No comments yet. Be the first to comment!</p>
             }
 
-            <h4><a href="#commentsFormX" data-toggle="collapse">Comments (@Model.Post.Comments.Count)</a></h4>
-
-            <div class="collapse" id="commentsFormX">
-            @foreach (var comment in Model.Post.Comments)
+            else
             {
-                string cssClass = comment.IsPublic ? "" : "deletedContent";
-                <br />
-                <form id="form1" method="post">
-                    <div class="@cssClass">
-                        @if (comment.IsPublic)
-                        {
-                            <div class="well well-sm">
-                                <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                                <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMM dd, yyyy")</h6>
-                                <p name="Comment-Body" class="commentBody">@comment.Body</p>
-                                <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
-                                <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                                <input type="submit" name="delete" class="btn btn-primary btn-sm" value="Delete Comment" asp-page="ManageComment" asp-page-handler="DeleteComment" />
-                            </div>
+                <h4><a href="#commentsFormX" data-toggle="collapse">Comments (@Model.Post.Comments.Count)</a></h4>
 
-                        }
-                        else
-                        { <br />
-                            <div class="well well-sm">
-                                <del class="h4">
-                                    <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                                    <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMM dd, yyyy")</h6>
-                                </del>
-                                <del><p name="Comment-Body" class="commentBody">@comment.Body</p></del>
+                <div class="collapse" id="commentsFormX">
+                    @foreach (var comment in Model.Post.Comments)
+                    {
+                        string cssClass = comment.IsPublic ? "" : "deletedContent";
+                        <br />
+                        <form id="form1" method="post">
+                            <div class="@cssClass">
+                                @if (comment.IsPublic)
+                                {
+                                    <div class="well well-sm">
+                                        <text name="Comment-Title" class="text-muted">@comment.AuthorName on</text>
+                                        <text name="Comment-Date" class="text-muted">@comment.PubDate.ToString("MM/dd/yyyy")</text>
+                                        <p name="Comment-Body" class="commentBody">@comment.Body</p>
+                                        <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
+                                        <input type="hidden" name="slug" value="@Model.Post.Slug" />
+                                        <input type="submit" name="delete" class="btn btn-primary btn-sm" value="Delete Comment" asp-page="ManageComment" asp-page-handler="DeleteComment" />
+                                    </div>
 
-                                <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
-                                <input type="hidden" name="slug" value="@Model.Post.Slug" />
-                                <input type="submit" name="undelete" class="btn btn-primary btn-sm" value="Republish Comment" asp-page="ManageComment" asp-page-handler="UndeleteComment" />
+                                }
+                                else
+                                {
+                                    <br />
+                                    <div class="well well-sm">
+                                        <del class="h4">
+                                            <text name="Comment-Title" class="text-muted">@comment.AuthorName</text>
+                                            <text name="Comment-Date" class="text-muted">@comment.PubDate.ToString("MM/dd/yyyy")</text>
+                                        </del>
+                                        <del><p name="Comment-Body" class="commentBody">@comment.Body</p></del>
+
+                                        <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
+                                        <input type="hidden" name="slug" value="@Model.Post.Slug" />
+                                        <input type="submit" name="undelete" class="btn btn-primary btn-sm" value="Republish Comment" asp-page="ManageComment" asp-page-handler="UndeleteComment" />
+                                    </div>
+                                }
                             </div>
-                        }
-                    </div>
-                </form>
-            }
+                        </form>
+                    }
                 </div>
+            }
         </div>
     }
     else
@@ -97,11 +100,13 @@
                 <p class="text-muted">No comments yet. Be the first to comment!</p>
             }
 
-            <h3><button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#commentsForm">Comments (@Model.Post.Comments.Count)</button></h3>
-            <br />
+            else
+            {
+                <h4><a href="#commentsForm" data-toggle="collapse">Comments (@Model.Post.Comments.Count)</a></h4>
+                <br />
 
-            <div class="collapse" id="commentsForm">
-              
+                <div class="collapse" id="commentsForm">
+
                     @foreach (var comment in Model.Post.Comments)
                     {
                         @if (comment.IsPublic)
@@ -109,8 +114,8 @@
 
                             <form id="form1" method="post">
                                 <div class="well well-sm">
-                                    <h4 name="Comment-Title" class="commentTitle">@comment.AuthorName</h4>
-                                    <h6 name="Comment-Date" class="commentDate">@comment.PubDate.ToString("MMMM dd, yyyy")</h6>
+                                    <text name="Comment-Title" class="text-muted">@comment.AuthorName on</text>
+                                    <text name="Comment-Date" class="text-muted">@comment.PubDate.ToString("MM/dd/yyyy")</text>
                                     <p name="Comment-Body" class="commentBody">@comment.Body</p>
                                     <input type="hidden" name="commentId" id="commentId" value="@comment.UniqueId" />
                                     <input type="hidden" name="slug" value="@Model.Post.Slug" />
@@ -119,17 +124,20 @@
 
                         }
                     }
-            
+
+                </div>
+
+
+            }
+
         </div>
-            </div>
     }
 
     <!--<hr class="commentsDivider" />-->
     @if (Model.Post.IsPublic && !Model.IsCommentsFull)
     {
-        <div class="col-sm-6" style="height:6px;"></div>
         <div class="add-comment-form">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h3>Add Comment</h3>
 
                 <div class="pull-right">
@@ -147,5 +155,7 @@
                 </div>
             </div>
         </div>
+
     }
+
 </article>

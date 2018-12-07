@@ -12,7 +12,7 @@ namespace Mom_Blog.Pages
 
         public void OnGet()
         {
-            Message = "Your blog description page.";
+            Message = "A personal blog for a certain family.";
         }
     }
 }
