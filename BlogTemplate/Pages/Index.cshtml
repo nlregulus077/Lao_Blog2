@@ -3,54 +3,55 @@
 @{
     ViewData["Title"] = "Home Page";
 
-    if (!Model.PostSummaries.Any())
-    {
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Welcome!</h1>
-                <p>Get started and write your first blog post <a class="text-primary" asp-page="/New">here</a>.</p>
-                <p>Happy blogging!</p>
+    @*if (Data.ApplicationDbContext.)
+        {
+            <div class="container">
+                <div class="jumbotron">
+                    <h1>Welcome!</h1>
+                    <p>Get started and write your first blog post <a class="text-primary" asp-page="/New">here</a>.</p>
+                    <p>Happy blogging!</p>
+                </div>
             </div>
-        </div>
-    }
+        }*@
 
-    else
-    {
-        <div class="container">
-            <div class="jumbotron">
-                <h1>Welcome!</h1>
-                <p>Get started and write your first blog post <a class="text-primary" asp-page="/New">here</a>.</p>
-                <p>Happy blogging!</p>
-            </div>
-        </div>
 
-        <div class="container"> 
-        <div class="row p-3"> 
-            @foreach (var post in Model.PostSummaries)
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Welcome!</h1>
+            <p>Get started and write your first blog post <a class="text-primary" asp-page="/New">here</a>.</p>
+            <p>Happy blogging!</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row p-3">
+            @foreach (var post in Model.Post)
             {
-                    <div class="col-4 mb-3">
-                        <article class="card h-100 text-primary bg-white mb-3" style="max-width: 20rem;">
+                <div class="col-4 mb-3">
+                    <article class="card h-100 text-primary bg-white mb-3" style="max-width: 20rem;">
 
-                            <div class="card-header text-white bg-primary">@post.PublishTime.ToString("MMMM dd, yyyy")</div>
-                            <div class="card-body">
-                                <h3 class="card-title"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h3>
-                                <p class="card-text">@post.Excerpt</p>
-                                @if (post.CommentCount == 1)
+                        <div class="card-header text-white bg-primary">@post.PubDate.ToString("MMMM dd, yyyy")</div>
+                        <div class="card-body">
+                            <h3 class="card-title"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug">@post.Title</a></h3>
+                            <p class="card-text">@post.Excerpt</p>
+                            @*@if (post. == 1)
                                 {
                                     <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comment </a></div>
                                 }
                                 else
                                 {
-                                    <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comments </a></div>
-                                }
-                            </div>
+                                    <div class="h4"><a asp-page="/post" asp-route-id="@post.Id.ToString("N")" asp-route-slug="@post.Slug"><span class="glyphicon glyphicon-comment"></span> @post.CommentCount Comments </a>*@
+                        </div>
+                        @*}*@
+                    </article>
+                </div>
 
-                        </article>
-                    </div>
-                
+
+
+
             }
 
         </div>
-        </div> 
-    }
+    </div>
+
 }

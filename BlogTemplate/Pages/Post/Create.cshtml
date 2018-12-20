@@ -1,0 +1,69 @@
+﻿@page
+@model Lao_MomBlog.Pages.Post.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Post</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Post.Title" class="control-label"></label>
+                <input asp-for="Post.Title" class="form-control" />
+                <span asp-validation-for="Post.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Body" class="control-label"></label>
+                <input asp-for="Post.Body" class="form-control" />
+                <span asp-validation-for="Post.Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.PubDate" class="control-label"></label>
+                <input asp-for="Post.PubDate" class="form-control" />
+                <span asp-validation-for="Post.PubDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.LastModified" class="control-label"></label>
+                <input asp-for="Post.LastModified" class="form-control" />
+                <span asp-validation-for="Post.LastModified" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Slug" class="control-label"></label>
+                <input asp-for="Post.Slug" class="form-control" />
+                <span asp-validation-for="Post.Slug" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Post.IsPublic" /> @Html.DisplayNameFor(model => model.Post.IsPublic))
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Post.IsDeleted" /> @Html.DisplayNameFor(model => model.Post.IsDeleted))
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Post.Excerpt" class="control-label"></label>
+                <input asp-for="Post.Excerpt" class="form-control" />
+                <span asp-validation-for="Post.Excerpt" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

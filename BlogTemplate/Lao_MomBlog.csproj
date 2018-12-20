@@ -19,7 +19,6 @@
     <Folder Include="BlogFiles\" />
     <Folder Include="BlogFiles\Drafts\" />
     <Folder Include="BlogFiles\Posts\" />
-    <Folder Include="Pages\New SQL Stuff\" />
     <Folder Include="wwwroot\Uploads\" />
   </ItemGroup>
 </Project>
