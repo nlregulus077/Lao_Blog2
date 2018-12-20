@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{58901495-13DD-47A5-BA4A-AB01E3E04C47}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogTemplate.Tests", "BlogTemplate.Tests\BlogTemplate.Tests.csproj", "{5824F803-D8E8-4EA4-A074-E68464F0CFF0}"
